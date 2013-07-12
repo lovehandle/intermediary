@@ -1,0 +1,9 @@
+= form_for resource do |f|
+  = f.label :api
+  = f.select :api, Api.all
+  = f.label :name
+  = f.text_field :name
+  = f.label :klass
+  = f.text_field :klass
+  = f.label :selector
+  = f.text_field :selector
