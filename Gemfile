@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'cut', path: "/users/ryan/code/cut"
+gem 'cut'
 gem 'inherited_resources'
 gem 'haml-rails'
 
