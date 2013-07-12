@@ -1,6 +1,6 @@
-= form_for resource do |f|
-  = f.label :api
-  = f.select :api, Api.all
+= form_for @mapping do |f|
+  = f.label :api_id
+  = f.select :api_id, Api.all.map(&:id)
   = f.label :name
   = f.text_field :name
   = f.label :klass

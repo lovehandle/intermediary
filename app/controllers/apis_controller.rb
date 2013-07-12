@@ -1,20 +1,33 @@
 class ApisController < ApplicationController
 
-  inherit_resources
+  def new
+    @api = Api.new
+  end
 
-  custom_actions resource: [ :query ]
+  def create
+    @api = Api.new(api_params)
 
-  respond_to :json
+    if @api.save
+      render :new
+    end
+  end
 
   def query
-    @klass   = Factory.build(resource)
+    @api     = Api.find(params[:id])
+    @klass   = Factory.build(@api)
     @results = @klass.all(params[:query])
 
     respond_to do |format|
       format.json do
-        respond_with @results
+        render json: @results
       end
     end 
+  end
+
+  private
+
+  def api_params
+    params.require(:api).permit!
   end
 
 end

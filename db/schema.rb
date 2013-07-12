@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20130712214516) do
   create_table "apis", force: true do |t|
     t.string   "url"
     t.string   "selector"
-    t.string   "item"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
