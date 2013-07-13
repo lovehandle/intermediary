@@ -1,7 +1,7 @@
 class Factory
 
   def self.build(api)
-    klass = Class.new(Object)
+    klass = Class.new(Klass)
     klass.send(:include, Cut)
     klass.send(:url, api.url)
     klass.send(:selector, api.selector)
