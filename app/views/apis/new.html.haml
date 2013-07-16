@@ -1,6 +1,53 @@
-= form_for @api do |f|
-  = f.label :url
-  = f.text_field :url
-  = f.label :selector
-  = f.text_field :selector
-  = f.submit
+%div{ class: "span12" }
+  %div{ class: "row" }
+    %div{ class: "header" }
+      %div{ class: "pull-left" }
+        %h1 New API
+
+    %ul{ class: "breadcrumb" }
+      %li
+        = link_to "Home", root_path
+        %span.divider
+      %li
+        = link_to "APIs", apis_path
+        %span.divider
+      %li.active
+        New API
+        %span.divider
+
+  %div{ class: "row" }
+    %div{ class: "span3" }
+      = form_for @api, class: "form-horizontal" do |f|
+        %div{ class: "control-group" }
+          = f.label :name, class: "control-label"
+          %div{ class: "controls" }
+            = f.text_field :name
+
+        %div{ class: "control-group" }
+          = f.label :description, class: "control-label"
+          %div{ class: "controls" }
+            = f.text_area :description
+
+        %div{ class: "control-group" }
+          = f.label :url, class: "control-label"
+          %div{ class: "controls" }
+            = f.text_field :url
+
+        %div{ class: "control-group" }
+          = f.label :selector, "CSS Selector", class: "control-label"
+          %div{ class: "controls" }
+            = f.text_field :selector
+
+        %h2 Attributes
+        = f.fields_for :mappings do |mf|
+          %div{ class: "control-group" }
+            = mf.label :name, class: "control-label"
+            %div{ class: "controls" }
+              = mf.text_field :name
+          %div{ class: "control-group" }
+            = mf.label :selector, "CSS Selector", class: "control-label"
+            %div{ class: "controls" }
+              = mf.text_field :selector
+
+        %div{ class: "actions" }
+          = f.submit "Create API", class: "btn btn-large btn-primary"

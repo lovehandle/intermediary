@@ -2,14 +2,21 @@ class ApisController < ApplicationController
 
   def new
     @api = Api.new
+    @api.mappings.build
   end
 
   def create
     @api = Api.new(api_params)
 
     if @api.save
+      redirect_to api_url(@api)
+    else
       render :new
     end
+  end
+
+  def show
+    @api = Api.find(params[:id])
   end
 
   def query

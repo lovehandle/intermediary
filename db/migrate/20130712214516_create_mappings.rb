@@ -3,7 +3,6 @@ class CreateMappings < ActiveRecord::Migration
     create_table :mappings do |t|
       t.integer :api_id
       t.string  :name
-      t.string  :klass
       t.string  :selector
       t.timestamps
     end

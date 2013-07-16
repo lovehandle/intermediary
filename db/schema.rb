@@ -13,7 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20130712214516) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "apis", force: true do |t|
+    t.string   "name"
+    t.text     "description"
     t.string   "url"
     t.string   "selector"
     t.datetime "created_at"
@@ -23,7 +28,6 @@ ActiveRecord::Schema.define(version: 20130712214516) do
   create_table "mappings", force: true do |t|
     t.integer  "api_id"
     t.string   "name"
-    t.string   "klass"
     t.string   "selector"
     t.datetime "created_at"
     t.datetime "updated_at"

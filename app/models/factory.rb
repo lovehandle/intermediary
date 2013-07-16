@@ -6,7 +6,7 @@ class Factory
     klass.send(:url, api.url)
     klass.send(:selector, api.selector)
     api.mappings.each do |mapping|
-      klass.send(:map, mapping.name, mapping.klass.constantize, to: mapping.selector)
+      klass.send(:map, mapping.name, String, to: mapping.selector)
     end
     klass
   end
