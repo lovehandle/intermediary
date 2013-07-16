@@ -1,11 +1,13 @@
 Intermediary::Application.routes.draw do
+
+  get "api/:id", to: "apis#call"
+
   resources :apis do
     member do
-      get :query
+      get :call
     end
   end
 
-  resources :mappings
-
   root "static_pages#home"
+
 end

@@ -15,9 +15,9 @@
         New API
         %span.divider
 
-  %div{ class: "row" }
-    %div{ class: "span3" }
-      = form_for @api, class: "form-horizontal" do |f|
+  = form_for @api, class: "form-horizontal" do |f|
+    %div{ class: "row" }
+      %div{ id: "new-api", class: "span3" }
         %div{ class: "control-group" }
           = f.label :name, class: "control-label"
           %div{ class: "controls" }
@@ -38,16 +38,19 @@
           %div{ class: "controls" }
             = f.text_field :selector
 
-        %h2 Attributes
+      %div{ id: "new-api-mappings", class: "span3" }
         = f.fields_for :mappings do |mf|
-          %div{ class: "control-group" }
-            = mf.label :name, class: "control-label"
-            %div{ class: "controls" }
-              = mf.text_field :name
-          %div{ class: "control-group" }
-            = mf.label :selector, "CSS Selector", class: "control-label"
-            %div{ class: "controls" }
-              = mf.text_field :selector
+          %div{ class: "form-inline" }
+            %div{ class: "control-group" }
+              = mf.label :name, class: "control-label"
+              %div{ class: "controls" }
+                = mf.text_field :name
+            %div{ class: "control-group" }
+              = mf.label :selector, "CSS Selector", class: "control-label"
+              %div{ class: "controls" }
+                = mf.text_field :selector
+    %div{ class: "row" }
+      %div{ class: "span3" }
 
         %div{ class: "actions" }
           = f.submit "Create API", class: "btn btn-large btn-primary"

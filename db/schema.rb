@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20130712214516) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "apis", force: true do |t|
+  create_table "apis", id: false, force: true do |t|
+    t.binary   "uuid"
     t.string   "name"
     t.text     "description"
     t.string   "url"

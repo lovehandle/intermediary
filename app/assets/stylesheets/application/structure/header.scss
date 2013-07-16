@@ -1,3 +1,18 @@
+#logo {
+  @extend .clearfix;
+  float: left;
+
+  a {
+    margin-top: 13px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #FFF;
+    float: left;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+}
+
 .header {
   @extend .clearfix;
   padding: 20px;

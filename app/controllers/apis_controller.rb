@@ -19,16 +19,14 @@ class ApisController < ApplicationController
     @api = Api.find(params[:id])
   end
 
-  def query
-    @api     = Api.find(params[:id])
-    @klass   = Factory.build(@api)
-    @results = @klass.all(params[:query])
+  def call
+    @results = Api.query(params[:id], params[:q])
 
     respond_to do |format|
       format.json do
         render json: @results
       end
-    end 
+    end
   end
 
   private
