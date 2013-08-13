@@ -13,6 +13,13 @@
   }
 }
 
+.search {
+  margin-top: 5px;
+  input {
+    padding: 3px;
+  }
+}
+
 .header {
   @extend .clearfix;
   padding: 20px;

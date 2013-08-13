@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'cut',        '~> 0.0.3'
 gem 'haml-rails', '~> 0.4'
+gem 'httparty',   '~> 0.11.0'
 gem 'jbuilder',   '~> 1.2'
 gem 'rails',      '~> 4.0.0'
 gem 'pg',         '~> 0.15.1'

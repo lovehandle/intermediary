@@ -8,6 +8,9 @@ Intermediary::Application.routes.draw do
     end
   end
 
+  get "proxy", to: "proxy#page"
+  get "proxy/content", to: "proxy#content"
+
   root "static_pages#home"
 
 end

@@ -15,11 +15,7 @@ class Api < ActiveRecord::Base
   # CLASS METHODS
 
   def self.query(id, parameters = {})
-    begin
-      find(id).query(parameters)
-    rescue
-      raise RuntimeError, "API does not exist"
-    end
+    find(id).query(parameters)
   end
 
   # INSTANCE METHODS

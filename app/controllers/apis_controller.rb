@@ -5,6 +5,10 @@ class ApisController < ApplicationController
     @api.mappings.build
   end
 
+  def index
+    @apis = Api.all
+  end
+
   def create
     @api = Api.new(api_params)
 

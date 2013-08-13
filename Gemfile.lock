@@ -139,6 +139,7 @@ DEPENDENCIES
   cut (~> 0.0.3)
   flat-ui-rails (~> 0.0.2)
   haml-rails (~> 0.4)
+  httparty (~> 0.11.0)
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.4)
   pg (~> 0.15.1)

@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //
 // VENDOR
 //
@@ -17,3 +18,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+
+//
+// LIBRARIES
+//
+//= require ./path_helper
+//= require ./diff_match_patch.js
+//= require ./path_predictor
+//= require ./selector
+
+//
+// PAGES
+//
+//= require ./pages/proxy
+
+window.create_selector = function () {
+  window.selector = new MySelectorGadget();
+  window.selector.initialize();
+}
